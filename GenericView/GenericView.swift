@@ -26,6 +26,13 @@ class GenericView: UIView {
         setupViews()
     }
 
+    override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        setupXib()
+        setupViews()
+        contentView.prepareForInterfaceBuilder()
+    }
+    
     func setupXib() {
         
         let bundle = Bundle(for: type(of: self))
